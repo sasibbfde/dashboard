@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Dashboard s</title>
+  <title>Dashboard</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body {
@@ -26,13 +26,26 @@
 
     .dashboard-container {
       width: 100%;
-      max-width: 95vw;
-      max-height: 90vh;
-      overflow: auto; /* Enables both vertical and horizontal scrolling */
+      max-width: 100vw;
+      height: auto;
+      overflow: auto;
       background: white;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
       border-radius: 12px;
       padding: 10px;
+    }
+
+    .tableauPlaceholder {
+      width: 100%;
+      min-width: 100%;
+      height: auto;
+    }
+
+    .tableauViz {
+      width: 100%;
+      height: 75vh;
+      min-height: 500px;
+      border: none;
     }
 
     footer {
@@ -41,23 +54,34 @@
       font-size: 14px;
       text-align: center;
     }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.4em;
+      }
+
+      .tableauViz {
+        height: 80vh;
+        min-height: 400px;
+      }
+    }
   </style>
 </head>
 <body>
 
   <header>
-    <h1> Dashboard</h1>
+    <h1>Dashboard</h1>
   </header>
 
   <div class="dashboard-container">
     <!-- Tableau Embed Code -->
-    <div class='tableauPlaceholder' id='viz1748634222924' style='position: relative; min-width: 1400px; min-height: 1850px;'>
+    <div class='tableauPlaceholder' id='viz1748634222924' style='position: relative;'>
       <noscript>
         <a href='#'>
           <img alt='Dashboard' src='https://public.tableau.com/static/images/sa/sasi_17486339483790/Dashboard1/1_rss.png' style='border: none' />
         </a>
       </noscript>
-      <object class='tableauViz' style='display:none;'>
+      <object class='tableauViz'>
         <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
         <param name='embed_code_version' value='3' />
         <param name='site_root' value='' />
@@ -76,8 +100,8 @@
     <script type='text/javascript'>
       var divElement = document.getElementById('viz1748634222924');
       var vizElement = divElement.getElementsByTagName('object')[0];
-      vizElement.style.width = '1400px';
-      vizElement.style.height = '1850px';
+      vizElement.style.width = "100%";
+      vizElement.style.height = "75vh";
       var scriptElement = document.createElement('script');
       scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
       vizElement.parentNode.insertBefore(scriptElement, vizElement);
