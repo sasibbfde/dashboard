@@ -26,8 +26,6 @@
 
     .dashboard-container {
       width: 100%;
-      max-width: 1200px;
-      height: auto;
       overflow-x: auto;
       overflow-y: auto;
       background: white;
@@ -35,6 +33,18 @@
       border-radius: 12px;
       padding: 10px;
       box-sizing: border-box;
+    }
+
+    .tableauPlaceholder {
+      width: 100%;
+      min-width: 100%;
+    }
+
+    .tableauViz {
+      width: 1400px; /* Fixed width to allow horizontal scroll */
+      min-width: 1000px;
+      height: 85vh;
+      border: none;
     }
 
     footer {
@@ -53,6 +63,12 @@
         padding: 5px;
         border-radius: 8px;
       }
+
+      .tableauViz {
+        width: 1000px; /* still scrollable on mobile */
+        min-width: 900px;
+        height: 80vh;
+      }
     }
   </style>
 </head>
@@ -69,7 +85,7 @@
           <img alt=' ' src='https://public.tableau.com/static/images/Ex/Expensetracking/Dashboard1/1_rss.png' style='border: none' />
         </a>
       </noscript>
-      <object class='tableauViz' style='display:none;'>
+      <object class='tableauViz'>
         <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
         <param name='embed_code_version' value='3' />
         <param name='site_root' value='' />
@@ -89,21 +105,8 @@
     <script type='text/javascript'>
       var divElement = document.getElementById('viz1749243088862');
       var vizElement = divElement.getElementsByTagName('object')[0];
-      if (divElement.offsetWidth > 800) {
-        vizElement.style.minWidth = '1400px';
-        vizElement.style.maxWidth = '100%';
-        vizElement.style.minHeight = '1850px';
-        vizElement.style.maxHeight = (divElement.offsetWidth * 0.75) + 'px';
-      } else if (divElement.offsetWidth > 500) {
-        vizElement.style.minWidth = '1400px';
-        vizElement.style.maxWidth = '100%';
-        vizElement.style.minHeight = '1850px';
-        vizElement.style.maxHeight = (divElement.offsetWidth * 0.75) + 'px';
-      } else {
-        vizElement.style.width = '100%';
-        vizElement.style.minHeight = '2650px';
-        vizElement.style.maxHeight = (divElement.offsetWidth * 1.77) + 'px';
-      }
+      vizElement.style.width = "100%";
+      vizElement.style.height = "85vh";
       var scriptElement = document.createElement('script');
       scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
       vizElement.parentNode.insertBefore(scriptElement, vizElement);
